@@ -4,7 +4,7 @@ class Api::SessionsController < ApplicationController
 
   # POST /api/login
   def create
-    @user = User.find_by(username: params[:username])
+    @user = User.find_by(username: params[:username]) # TODO: Handle presence of username and password
     if @user && @user.authenticate(params[:password])
       # set token
       token = @user.generate_token
