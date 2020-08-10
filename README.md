@@ -68,8 +68,8 @@ _________________
 _________________    
 
 
-#### Fetch User
-* Path: `/users/{:id}`
+#### Fetch Current User
+* Path: `/users/me`
 * HTTP Verb: `GET`
 * Authenticated? `Yes`
 

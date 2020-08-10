@@ -9,11 +9,12 @@ class User < ApplicationRecord
     (?=.*[[:^alnum:]]) # Must contain a symbol
   /x
 
+  validates :username, uniqueness: true
   validates :password,
-            presence: true,
-            length: { within: 8..40 },
-            format: { with: PASSWORD_FORMAT },
-            on: :create
+              presence: true,
+              length: { within: 8..40 },
+              format: { with: PASSWORD_FORMAT },
+              on: :create
 
   def generate_token
     SecureRandom.urlsafe_base64(nil, false)
