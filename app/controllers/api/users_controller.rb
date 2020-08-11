@@ -15,7 +15,7 @@ class Api::UsersController < ApplicationController
     user = User.create(user_params)
     @user = user.serialized
 
-    render json: json_response("User successfully created", @user, nil)
+    render json: json_response("User successfully created", @user, nil), status: :created
   end
 
   # GET /api/users/me
