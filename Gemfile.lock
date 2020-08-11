@@ -154,8 +154,6 @@ GEM
     redic (1.5.3)
       hiredis
     redis (4.2.1)
-    redis-namespace (1.7.0)
-      redis (>= 3.0.4)
     regexp_parser (1.7.1)
     rubyzip (2.3.0)
     sass-rails (6.0.0)
@@ -229,7 +227,6 @@ DEPENDENCIES
   puma (~> 4.1)
   rails (~> 6.0.3, >= 6.0.3.2)
   redis (~> 4.0)
-  redis-namespace
   sass-rails (>= 6)
   selenium-webdriver
   spring
