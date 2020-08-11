@@ -7,8 +7,9 @@ class ApplicationController < ActionController::Base
   private
 
   def authenticate
-    if authenticate_with_http_token { |token, options| $redis.hexists(token, 'id') && @token = token }
-      @current_user = $redis.hgetall(@token).with_indifferent_access
+    if authenticate_with_http_token { |token, options| Rails.cache.exist?(token) && @token = token }
+      user_id = Rails.cache.read(@token)
+      @current_user = User[user_id.to_i].serialized
     else
       render json: "Invalid token", status: :unauthorized
     end
