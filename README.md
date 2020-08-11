@@ -81,3 +81,8 @@ _________________
 * Path: `/logout`
 * HTTP Verb: `DELETE`
 * Authenticated? `Yes`
+
+
+## Tests
+
+`bundle exec rspec`
